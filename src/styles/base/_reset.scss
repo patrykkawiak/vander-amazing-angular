@@ -1,0 +1,77 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5em;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: unset;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  background: unset;
+  border: unset;
+  padding: unset;
+  user-select: none;
+  cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 81.25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 93.75%;
+  }
+}

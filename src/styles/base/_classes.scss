@@ -1,0 +1,50 @@
+@use './colors' as *;
+
+.wrapper {
+	max-width: 1400px;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.highlighted {
+	color: $mainColor
+}
+
+.text-gray {
+	font-size: 1.3rem;
+	color: $grayText
+}
+
+.section-padding {
+	padding: 4rem 2rem;
+}
+
+.section-heading {
+	small {
+		color: rgba(132, 132, 132, 1);
+		font-size: 1.4rem;
+	}
+	h2 {
+		font-size: 2.5rem;
+		font-weight: 600;
+		position: relative;
+		line-height: normal;
+	}
+	h2::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: -15px;
+		width: 2px;
+		height: 80%;
+		background-color: $mainColor
+	}
+}
+
+@media (min-width: 768px) {
+	.section-padding {
+		padding: 6rem 4rem;
+	}
+}

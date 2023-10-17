@@ -1,0 +1,8 @@
+@use "base" as *;
+
+body {
+  background-color: $bgcColor;
+  font-weight: normal;
+  font-family: "Montserrat", sans-serif;
+  color: $mainText;
+}
