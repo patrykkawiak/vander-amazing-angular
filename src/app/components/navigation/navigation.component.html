@@ -1,0 +1,32 @@
+<nav class="nav">
+  <div class="wrapper">
+    <div class="nav-ctn">
+      <a class="nav-logo"> Vander<span class="highlighted">Amazing</span> </a>
+      <button class="burger" (click)="handleNav()">
+        <div class="burger-bar"></div>
+        <div class="burger-bar"></div>
+        <div class="burger-bar"></div>
+      </button>
+      <ul [ngClass]="['nav-list', !isNavOpen ? 'nav-active' : '']">
+        <li>
+          <a>Blog</a>
+        </li>
+        <li>
+          <a>Bestsellery</a>
+        </li>
+        <li>
+          <a>Zespół</a>
+        </li>
+        <li>
+          <a>Sklep</a>
+        </li>
+        <li>
+          <app-button [variant]="'primary'"> Logowanie </app-button>
+        </li>
+        <li>
+          <app-button [variant]="'secondary'">0.00zł</app-button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

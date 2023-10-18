@@ -1,0 +1,50 @@
+@use "../../../../../styles/base/colors" as *;
+
+.hotshot {
+  padding: 1rem 3rem;
+  border: 2px solid $mainColor;
+  color: $mainText;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  background: $hotShot;
+
+  h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &-ctn {
+    display: flex;
+    gap: 4rem;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      font-size: 5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .hotshot {
+    padding: 1rem 4rem;
+    position: absolute;
+    bottom: -7rem;
+    right: 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hotshot {
+    right: 10%;
+  }
+}

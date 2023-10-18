@@ -1,0 +1,19 @@
+@use "../../../../styles/base/colors" as *;
+
+.blog {
+  padding: 4rem 2rem;
+  background-color: $secondBgc;
+}
+.blog-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+@media (min-width: 992px) {
+  .blog {
+    padding: 12rem 2rem 4rem 2rem;
+  }
+}

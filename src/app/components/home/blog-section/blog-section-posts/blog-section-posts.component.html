@@ -1,0 +1,16 @@
+<ul class="post-list">
+  <ng-container *ngFor="let post of posts">
+    <li class="post" *ngIf="post.isFeatured === true">
+      <img
+        src="../../../../../assets/images/Posts/post1.jpg"
+        class="post-img"
+        alt=""
+      />
+      <div class="post-box">
+        <h3>{{ post.title }}</h3>
+        <p className="text-gray">{{ post.description }}</p>
+        <a className="highlighted"> Read More... </a>
+      </div>
+    </li>
+  </ng-container>
+</ul>

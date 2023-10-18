@@ -1,0 +1,24 @@
+@use "../../../styles/base/colors" as *;
+
+.section-heading {
+  small {
+    color: rgba(132, 132, 132, 1);
+    font-size: 1.4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: relative;
+    line-height: normal;
+  }
+  h2::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    width: 2px;
+    height: 80%;
+    background-color: $mainColor;
+  }
+}
