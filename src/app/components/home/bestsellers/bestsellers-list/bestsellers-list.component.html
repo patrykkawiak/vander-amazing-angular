@@ -1,0 +1,21 @@
+<ul class="list">
+  <li class="item" *ngFor="let bestseller of bestsellers">
+    <div class="item-imgs">
+      <img
+        src="../../../../../assets/images/Other/elipse2.png"
+        alt="elipse"
+        class="item-elipse"
+      />
+      <img
+        class="item-img"
+        src="{{ bestseller.image }}"
+        alt="{{ bestseller.name }}"
+      />
+    </div>
+    <div class="item-content">
+      <p class="item-content-price">{{ bestseller.price }}zł</p>
+      <p class="text-gray" style="font-size: 1.5rem">{{ bestseller.name }}</p>
+      <app-button variant="secondary">Do koszyka</app-button>
+    </div>
+  </li>
+</ul>

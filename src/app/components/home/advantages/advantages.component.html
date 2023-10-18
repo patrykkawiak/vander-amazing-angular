@@ -1,0 +1,19 @@
+<section class="advantages">
+  <div class="advantages-shadow"></div>
+  <div class="wrapper section-padding">
+    <div class="advantages-heading">
+      <small>Co nas wyróżnia?</small>
+      <h2>Nasze zalety</h2>
+    </div>
+    <ul class="advantages-list">
+      <li class="item" *ngFor="let advantege of advantages">
+        <img
+          src="../../../../assets/images/Advantages/wallet.png"
+          alt="wallet icon"
+        />
+        <h3>{{ advantege.title }}</h3>
+        <p>{{ advantege.desc }}</p>
+      </li>
+    </ul>
+  </div>
+</section>

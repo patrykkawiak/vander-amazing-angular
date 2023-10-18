@@ -1,0 +1,73 @@
+@use "../../../../../styles/base/colors" as *;
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 6rem;
+}
+
+@media (min-width: 992px) {
+  .list {
+    flex-direction: row;
+  }
+}
+
+// Singe item
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 4rem;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  transition: transform 0.3s, border 0.3s;
+  max-width: 25rem;
+
+  &-imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-elipse {
+    position: absolute;
+    width: 85%;
+    height: 50%;
+    z-index: -1;
+    top: 10%;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  &-img {
+    max-height: 20rem;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    &-price {
+      font-size: 2rem;
+      color: $mainColor;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .item {
+    border: 2px solid transparent;
+  }
+  .item:hover {
+    .item-elipse {
+      opacity: 1;
+    }
+    transform: translateY(-30px);
+    border: 2px solid $bestsellerBorder;
+  }
+}

@@ -1,0 +1,13 @@
+<section class="wrapper section-padding members">
+  <app-heading title="Personel" subtitle="Poznaj nas!"></app-heading>
+  <ul class="members-list">
+    <li class="member" *ngFor="let member of members">
+      <img src="{{ member.img }}" alt="{{ member.name }}" />
+      <article class="member-ctn">
+        <h3>{{ member.name }}</h3>
+        <small class="highlighted">{{ member.vacancy }}</small>
+        <p>{{ member.desc }}</p>
+      </article>
+    </li>
+  </ul>
+</section>

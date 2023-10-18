@@ -38,6 +38,10 @@ ol {
   list-style: none;
 }
 
+input, textarea {
+  font-family: inherit;
+}
+
 button {
   background: unset;
   border: unset;

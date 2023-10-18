@@ -1,0 +1,41 @@
+@use "../../../../styles/base/colors" as *;
+
+.team {
+  background-color: $secondBgc;
+  padding: 4rem 2rem;
+  &-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8rem;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    h3 {
+      font-size: 1.9rem;
+    }
+    p {
+      color: $grayText;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .team {
+    padding: 0 2rem;
+    &-box {
+      flex-direction: row;
+      gap: 8rem;
+    }
+    &-content {
+      width: 50%;
+    }
+    img {
+      width: 50%;
+      max-height: 35rem;
+    }
+  }
+}
