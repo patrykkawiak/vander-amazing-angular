@@ -1,5 +1,9 @@
 <header class="wrapper header">
-  <img src="../../../../assets/images/Header/header-image.png" class="header-img" alt="header img" />
+  <img
+    src="../../../../assets/images/Header/header-image.png"
+    class="header-img"
+    alt="header img"
+  />
   <div class="header-content">
     <h1 class="header-content-heading">
       Wejdź na wyższy <br />
@@ -11,11 +15,11 @@
       nasze oferty
     </p>
     <div class="header-content-btns">
-      <app-button variant="primary">
+      <app-button variant="primary" [routerLink]="['/shop']">
         <p style="font-size: 1.5rem">Sklep</p>
       </app-button>
       <app-button variant="secondary">
-        <p style="font-size: 1.5rem">Bestsellery</p>
+        <a style="font-size: 1.5rem" href="#bestsellers">Bestsellery</a>
       </app-button>
     </div>
   </div>

@@ -2,6 +2,7 @@
   background-image: url("../../../../assets/images/Advantages/stats.jpg");
   position: relative;
   color: white;
+  background-attachment: fixed;
   &-shadow {
     position: absolute;
     height: 100%;
@@ -53,7 +54,7 @@
     max-width: 17rem;
   }
   img {
-    height: 6rem;
-    width: 6rem;
+    height: 5rem;
+    width: 5rem;
   }
 }

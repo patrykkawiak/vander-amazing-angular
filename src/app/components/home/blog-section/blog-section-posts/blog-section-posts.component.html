@@ -1,7 +1,9 @@
 <ul class="post-list">
   <ng-container *ngFor="let post of posts">
     <li class="post" *ngIf="post.isFeatured === true">
-      <img src="{{ post.image }}" class="post-img" alt="{{ post.title }}" />
+      <div class="post-img">
+        <img src="{{ post.image }}" class="post-img-item" alt="{{ post.title }}" />
+      </div>
       <div class="post-box">
         <h3>{{ post.title }}</h3>
         <p class="text-gray">{{ post.description }}</p>

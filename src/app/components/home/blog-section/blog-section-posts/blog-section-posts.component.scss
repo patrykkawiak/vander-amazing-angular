@@ -51,9 +51,18 @@
     max-width: 80%;
     gap: 6rem;
     &-img {
-      max-height: 22rem;
       width: 50%;
-      height: 100%;
+      overflow: hidden;
+      &-item {
+        max-height: 22rem;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+        cursor: pointer;
+      }
+      &-item:hover {
+        transform: scale(1.25);
+      }
     }
     &-box {
       width: 50%;
