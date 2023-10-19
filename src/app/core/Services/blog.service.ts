@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 })
 export class BlogService {
   postsChanged = new Subject<Post[]>();
+  filterOption = new Subject<string>();
 
   posts: Post[] = [
     new Post(
@@ -54,5 +55,26 @@ export class BlogService {
 
   getPost(index: number) {
     return this.posts[index];
+  }
+
+  sortPost(value: string) {
+
+    let posts = this.getPosts()
+
+    if (value === 'oldest') {
+      const sortedPosts = posts.sort(
+        (a, b) =>
+          new Date(b.relaseDate).getTime() - new Date(a.relaseDate).getTime()
+      );
+      return sortedPosts;
+    }
+    if (value === 'newest') {
+      const sortedPosts = posts.sort(
+        (a, b) =>
+          new Date(a.relaseDate).getTime() - new Date(b.relaseDate).getTime()
+      );
+      return sortedPosts;
+    }
+    return this.posts;
   }
 }
