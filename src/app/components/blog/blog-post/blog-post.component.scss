@@ -1,0 +1,66 @@
+@use "../../../../styles/base/colors" as *;
+.blog {
+  padding: 4rem 0;
+  height: 100%;
+  width: 100%;
+  &-banner {
+    position: relative;
+    margin-top: 14rem;
+    width: 100%;
+    height: 12rem;
+    position: relative;
+    background-color: #343434;
+  }
+  &-item {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  &-item:nth-child(1) {
+    left: -15rem;
+  }
+  &-item:nth-child(2) {
+    right: -19rem;
+  }
+  &-imgbox {
+    position: absolute;
+    width: 32rem;
+    height: 32rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background-color: #1d1d1d;
+    img {
+      position: absolute;
+      height: 27rem;
+      width: 27rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
+    }
+  }
+  &-content {
+    margin-top: 15rem;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    &-heading {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+    &-text {
+        max-width: 60%;
+        line-height: 3rem;
+    }
+  }
+}

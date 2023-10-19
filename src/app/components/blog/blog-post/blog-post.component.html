@@ -1,0 +1,16 @@
+<section class="blog">
+  <div class="blog-banner">
+    <div class="blog-imgbox">
+      <div class="blog-item">
+        <p>Data Dodania:</p>
+        <p>{{ currentPost.relaseDate | dateTransform }}</p>
+      </div>
+      <a class="blog-item" [routerLink]="['/blog']">Sprawdź inne posty</a>
+      <img src="{{ currentPost.image }}" alt="{{ currentPost.title }}" />
+    </div>
+  </div>
+  <article class="blog-content">
+    <h3 class="blog-content-heading">{{ currentPost.title }}</h3>
+    <p class="blog-content-text text-gray">{{ currentPost.description }}</p>
+  </article>
+</section>
