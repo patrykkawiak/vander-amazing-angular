@@ -27,7 +27,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1.8rem;
     height: calc(100vh - 4.5rem);
     font-size: 1.3rem;
     width: 50%;
@@ -36,6 +36,40 @@
     top: 4.5rem;
     background-color: $mobileNav;
     transition: left 0.4s;
+
+    li {
+      a {
+        padding: 0.5rem;
+      }
+      a.active {
+        color: $mainColor;
+      }
+    }
+  }
+
+  &-dropdown {
+    position: relative;
+
+    &-item {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 2rem;
+      background-color: $secondBgc;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    &.dropdown-open &-item {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   &-active {

@@ -7,18 +7,26 @@
         <div class="burger-bar"></div>
         <div class="burger-bar"></div>
       </button>
-      <ul [ngClass]="['nav-list', !isNavOpen ? 'nav-active' : '']">
-        <li>
-          <a>Blog</a>
+      <ul [ngClass]="['nav-list', isNavOpen ? 'nav-active' : '']">
+        <li class="nav-dropdown" appDropdown>
+          <a
+            [routerLink]="['/']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+          <ul class="nav-dropdown-item">
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#bestsellers">Bestsellery</a></li>
+            <li><a href="#team">Zespół</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
         </li>
         <li>
-          <a>Bestsellery</a>
+          <a [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
         </li>
         <li>
-          <a>Zespół</a>
-        </li>
-        <li>
-          <a>Sklep</a>
+          <a [routerLink]="['/shop']" routerLinkActive="active">Sklep</a>
         </li>
         <li>
           <app-button [variant]="'primary'"> Logowanie </app-button>
