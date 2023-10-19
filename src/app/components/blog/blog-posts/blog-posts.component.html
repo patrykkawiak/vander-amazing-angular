@@ -1,7 +1,7 @@
 <ul class="post-list">
-  <ng-container *ngFor="let post of posts; let index = index">
+  <ng-container *ngFor="let post of posts">
     <li class="post">
-      <div class="post-img" [routerLink]="[index]">
+      <div class="post-img" [routerLink]="[post.id]">
         <img
           src="{{ post.image }}"
           class="post-img-item"
@@ -14,7 +14,7 @@
           <small>{{ post.relaseDate | dateTransform }}</small>
         </div>
         <p class="text-gray">{{ post.description | shorten : 240 }}</p>
-        <a class="highlighted" [routerLink]="[index]"> Read More... </a>
+        <a class="highlighted" [routerLink]="[post.id]"> Read More... </a>
       </div>
     </li>
   </ng-container>
