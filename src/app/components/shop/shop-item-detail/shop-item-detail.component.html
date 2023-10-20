@@ -1,1 +1,25 @@
-<p>shop-item-detail works!</p>
+<section class="item-detail wrapper">
+  <div class="item-detail-img">
+    <img src="{{ shopItem.image }}" alt="{{ shopItem.name }}" />
+  </div>
+  <div class="item-detail-content">
+    <h1>{{ shopItem.name }}</h1>
+    <small>kod producenta: {{ shopItem.producentId }}</small>
+    <p class="highlighted">{{ shopItem.price + "zł" }}</p>
+    <article>
+      {{ shopItem.description }}
+    </article>
+    <div class="item-detail-content-features">
+      <ul class="item-detail-content-features-list">
+        <li>
+          {{
+            shopItem.isAvailable ? "Produkt dostępny" : "Produkt niedostępny"
+          }}
+        </li>
+        <li *ngIf="shopItem.price > 200">Darmowa Dostawa</li>
+        <li *ngIf="shopItem.isGuarantee">Gwarancja</li>
+      </ul>
+      <app-button>Do koszyka</app-button>
+    </div>
+  </div>
+</section>

@@ -209,6 +209,10 @@ export class ShopService {
     return [...this.shopItems];
   }
 
+  getShopItem(index: number) {
+    return this.shopItems[index];
+  }
+
   getBestsellers() {
     return this.shopItems.filter((item) => item.isBestseller);
   }

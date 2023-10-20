@@ -1,12 +1,12 @@
 <li class="shop-item">
-  <div class="shop-item-img">
+  <div class="shop-item-img" [routerLink]="[shopItem.id]">
     <img src="{{ shopItem.image }}" alt="{{ shopItem.name + 'image' }}" />
   </div>
   <div class="shop-item-content">
     <h3>{{ shopItem.name }}</h3>
     <div class="shop-item-content-box">
       <strong>{{ shopItem.price + "zł" }}</strong>
-      <button>Dodaj</button>
+      <button [routerLink]="[shopItem.id]">Zobacz</button>
     </div>
   </div>
 </li>
