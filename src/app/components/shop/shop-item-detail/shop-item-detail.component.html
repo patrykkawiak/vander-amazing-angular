@@ -1,6 +1,6 @@
 <section class="item-detail wrapper">
-  <div class="item-detail-img">
-    <img src="{{ shopItem.image }}" alt="{{ shopItem.name }}" />
+  <div class="item-detail-img" (mousemove)="zoomImg($event)">
+    <img src="{{ shopItem.image }}" #itemImg alt="{{ shopItem.name }}" />
   </div>
   <div class="item-detail-content">
     <h1>{{ shopItem.name }}</h1>

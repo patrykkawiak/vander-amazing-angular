@@ -221,12 +221,12 @@ export class ShopService {
     return Math.floor(Math.random() * this.shopItems.length);
   }
 
-  getRandomItems(currentItem: number) {
+  getRandomItems() {
     const randomItems: ShopItem[] = [];
     const randomNumbers: number[] = [];
     for (let i = 0; i < 4; i++) {
       const number = this.generateRandomItem();
-      if (!randomNumbers.includes(number) && number !== currentItem) {
+      if (!randomNumbers.includes(number)) {
         randomNumbers.push(number);
         randomItems.push(this.shopItems[number]);
       } else {
