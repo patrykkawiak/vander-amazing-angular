@@ -13,6 +13,6 @@ export class BlogSectionPostsComponent implements OnInit {
   constructor(private blogService: BlogService) {}
 
   ngOnInit() {
-    this.posts = this.blogService.getFeaturedPosts();
+    this.posts = this.blogService.getFeaturedPosts().slice(0, 2);
   }
 }

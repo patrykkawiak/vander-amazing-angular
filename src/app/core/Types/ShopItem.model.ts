@@ -4,5 +4,7 @@ export interface ShopItem {
   producentId: string | number;
   description: string;
   image: string | string[];
+  isAvailable: boolean;
+  isGuarantee: boolean;
   isBestseller?: boolean;
 }

@@ -3,16 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HomeComponent } from './components/home/home.component';
-import { BlogComponent } from './components/blog/blog.component';
 import { NavigationModule } from './components/navigation/navigation.module';
 import { HomeModule } from './components/home/home.module';
-import { BlogPostsComponent } from './components/blog/blog-posts/blog-posts.component';
 import { BlogModule } from './components/blog/blog.module';
 import { ErrorComponent } from './components/error/error.component';
+import { ShopModule } from './components/shop/shop.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ErrorComponent],
+  declarations: [AppComponent, ErrorComponent],
   imports: [
     BrowserModule,
     NavigationModule,
@@ -20,6 +18,7 @@ import { ErrorComponent } from './components/error/error.component';
     SharedModule,
     HomeModule,
     BlogModule,
+    ShopModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

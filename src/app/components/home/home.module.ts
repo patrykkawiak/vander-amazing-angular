@@ -14,6 +14,7 @@ import { MembersComponent } from './members/members.component';
 import { ShopSectionComponent } from './shop-section/shop-section.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactFormComponent } from './contact/contact-form/contact-form.component';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ContactFormComponent } from './contact/contact-form/contact-form.compon
     ShopSectionComponent,
     ContactComponent,
     ContactFormComponent,
+    HomeComponent,
   ],
   imports: [SharedModule, AppRoutingModule],
   exports: [
@@ -45,6 +47,7 @@ import { ContactFormComponent } from './contact/contact-form/contact-form.compon
     ShopSectionComponent,
     ContactComponent,
     ContactFormComponent,
+    HomeComponent,
   ],
 })
 export class HomeModule {}
