@@ -16,25 +16,25 @@ export class MembersComponent {
       name: 'Mario Rogerson',
       vacancy: 'game tester',
       desc: 'To jest Mario, w naszej firmie to właśnie on sprawdza czy każda gra spełnia oczekiwania',
-      img: '../../../../assets/images/Team/member.jpg',
+      img: 'assets/images/Team/member.jpg',
     },
     {
       name: 'Mario Rogerson',
       vacancy: 'game tester',
       desc: 'To jest Mario, w naszej firmie to właśnie on sprawdza czy każda gra spełnia oczekiwania',
-      img: '../../../../assets/images/Team/member.jpg',
+      img: 'assets/images/Team/member.jpg',
     },
     {
       name: 'Mario Rogerson',
       vacancy: 'game tester',
       desc: 'To jest Mario, w naszej firmie to właśnie on sprawdza czy każda gra spełnia oczekiwania',
-      img: '../../../../assets/images/Team/member.jpg',
+      img: 'assets/images/Team/member.jpg',
     },
     {
       name: 'Mario Rogerson',
       vacancy: 'game tester',
       desc: 'To jest Mario, w naszej firmie to właśnie on sprawdza czy każda gra spełnia oczekiwania',
-      img: '../../../../assets/images/Team/member.jpg',
+      img: 'assets/images/Team/member.jpg',
     },
   ];
 }
