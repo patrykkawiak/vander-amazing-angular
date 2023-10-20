@@ -1,46 +1,59 @@
 <section class="shop wrapper">
-    <div class="shop-ctn">
-        <h2 class="shop-heading">Słuchawki</h2>
-        <ul class="shop-list">
-          <ng-container *ngFor="let shopItem of shopItems">
-            <app-shop-item
-              [shopItem]="shopItem"
-              *ngIf="shopItem.category === 'headphones'"
-            ></app-shop-item
-          ></ng-container>
-        </ul>
-      </div>
-    <div class="shop-ctn">
-        <h2 class="shop-heading">Myszki</h2>
-        <ul class="shop-list">
-          <ng-container *ngFor="let shopItem of shopItems">
-            <app-shop-item
-              [shopItem]="shopItem"
-              *ngIf="shopItem.category === 'mouse'"
-            ></app-shop-item
-          ></ng-container>
-        </ul>
-      </div>
-    <div class="shop-ctn">
-        <h2 class="shop-heading">Komputery</h2>
-        <ul class="shop-list">
-          <ng-container *ngFor="let shopItem of shopItems">
-            <app-shop-item
-              [shopItem]="shopItem"
-              *ngIf="shopItem.category === 'pc'"
-            ></app-shop-item
-          ></ng-container>
-        </ul>
-      </div>
-    <div class="shop-ctn">
-        <h2 class="shop-heading">Klawiatury</h2>
-        <ul class="shop-list">
-          <ng-container *ngFor="let shopItem of shopItems">
-            <app-shop-item
-              [shopItem]="shopItem"
-              *ngIf="shopItem.category === 'keyboard'"
-            ></app-shop-item
-          ></ng-container>
-        </ul>
-      </div>
+  <div>
+    <label for="all">Wszystko</label>
+    <input type="checkbox" id="all" [(ngModel)]="allFilter" />
+    <label for="headphones">Słuchawki</label>
+    <input type="checkbox" id="headphones" [(ngModel)]="headphonesFilter" />
+
+    <label for="all">Klawiatury</label>
+    <input type="checkbox" id="all" [(ngModel)]="keyboardsFilter" />
+    <label for="all">Myszki</label>
+    <input type="checkbox" id="all" [(ngModel)]="mouseFilter" />
+    <label for="all">Komputery</label>
+    <input type="checkbox" id="all" [(ngModel)]="pcFilter" />
+  </div>
+  <div class="shop-ctn" *ngIf="allFilter || headphonesFilter">
+    <h2 class="shop-heading">Słuchawki</h2>
+    <ul class="shop-list">
+      <ng-container *ngFor="let shopItem of shopItems">
+        <app-shop-item
+          [shopItem]="shopItem"
+          *ngIf="shopItem.category === 'headphones'"
+        ></app-shop-item
+      ></ng-container>
+    </ul>
+  </div>
+  <div class="shop-ctn" *ngIf="mouseFilter || allFilter">
+    <h2 class="shop-heading">Myszki</h2>
+    <ul class="shop-list">
+      <ng-container *ngFor="let shopItem of shopItems">
+        <app-shop-item
+          [shopItem]="shopItem"
+          *ngIf="shopItem.category === 'mouse'"
+        ></app-shop-item
+      ></ng-container>
+    </ul>
+  </div>
+  <div class="shop-ctn" *ngIf="pcFilter || allFilter">
+    <h2 class="shop-heading">Komputery</h2>
+    <ul class="shop-list">
+      <ng-container *ngFor="let shopItem of shopItems">
+        <app-shop-item
+          [shopItem]="shopItem"
+          *ngIf="shopItem.category === 'pc'"
+        ></app-shop-item
+      ></ng-container>
+    </ul>
+  </div>
+  <div class="shop-ctn" *ngIf="keyboardsFilter || allFilter">
+    <h2 class="shop-heading">Klawiatury</h2>
+    <ul class="shop-list">
+      <ng-container *ngFor="let shopItem of shopItems">
+        <app-shop-item
+          [shopItem]="shopItem"
+          *ngIf="shopItem.category === 'keyboard'"
+        ></app-shop-item
+      ></ng-container>
+    </ul>
+  </div>
 </section>

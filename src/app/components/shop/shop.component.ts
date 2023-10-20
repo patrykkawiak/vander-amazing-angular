@@ -10,10 +10,18 @@ import { ShopItem } from 'src/app/core/Types/ShopItem.model';
 export class ShopComponent implements OnInit {
   shopItems: ShopItem[] = [];
 
+
+  // do usnięcia, uzyc selecta zamiast checkboxa :)
+
+  allFilter: boolean = true;
+  headphonesFilter: boolean = false;
+  keyboardsFilter: boolean = false;
+  pcFilter: boolean = false;
+  mouseFilter: boolean = false;
+
   constructor(private shopService: ShopService) {}
 
   ngOnInit() {
     this.shopItems = this.shopService.getShopItems();
   }
-
 }
