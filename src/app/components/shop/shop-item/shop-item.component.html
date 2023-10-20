@@ -1,11 +1,11 @@
 <li class="shop-item">
   <div class="shop-item-img">
-    <img src="../../../../assets/images/Bestsellers/headphones2.png" alt="" />
+    <img src="{{ shopItem.image }}" alt="{{ shopItem.name + 'image' }}" />
   </div>
   <div class="shop-item-content">
-    <h3>Random Headphones</h3>
+    <h3>{{ shopItem.name }}</h3>
     <div class="shop-item-content-box">
-      <strong>299.99zł</strong>
+      <strong>{{ shopItem.price + "zł" }}</strong>
       <button>Dodaj</button>
     </div>
   </div>

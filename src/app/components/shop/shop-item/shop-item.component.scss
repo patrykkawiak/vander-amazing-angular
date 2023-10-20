@@ -13,10 +13,15 @@
     border-radius: 15px;
     width: 16rem;
     padding: 1.5rem;
+    transition: background 0.3s;
+    cursor: pointer;
 
     img {
       height: 10rem;
     }
+  }
+  &-img:hover {
+    background: #767676;
   }
 
   &-content {
