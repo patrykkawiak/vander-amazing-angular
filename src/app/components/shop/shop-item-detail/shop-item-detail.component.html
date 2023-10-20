@@ -12,14 +12,28 @@
     <div class="item-detail-content-features">
       <ul class="item-detail-content-features-list">
         <li>
+          <i *ngIf="shopItem.isAvailable" class="bx bx-check"></i>
+          <i *ngIf="!shopItem.isAvailable" class="bx bx-x"></i>
           {{
-            shopItem.isAvailable ? "Produkt dostępny" : "Produkt niedostępny"
+            shopItem.isAvailable ? " Produkt dostępny" : "Produkt niedostępny"
           }}
         </li>
-        <li *ngIf="shopItem.price > 200">Darmowa Dostawa</li>
-        <li *ngIf="shopItem.isGuarantee">Gwarancja</li>
+        <li *ngIf="shopItem.price > 200">
+          <i class="bx bx-check"></i> Darmowa Dostawa
+        </li>
+        <li *ngIf="shopItem.isGuarantee">
+          <i class="bx bx-check"></i> Gwarancja
+        </li>
       </ul>
       <app-button>Do koszyka</app-button>
     </div>
   </div>
+</section>
+<section class="item-offer wrapper">
+  <div class="item-offer-breaker"></div>
+  <ul class="shop-list">
+    <ng-container *ngFor="let shopItem of randomItems">
+      <app-shop-item [shopItem]="shopItem" [path]="'/shop/'"></app-shop-item
+    ></ng-container>
+  </ul>
 </section>

@@ -11,6 +11,7 @@ import { ShopItem } from 'src/app/core/Types/ShopItem.model';
 export class ShopItemDetailComponent implements OnInit {
   itemId: number = 0;
   shopItem!: ShopItem;
+  randomItems: ShopItem[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -20,6 +21,7 @@ export class ShopItemDetailComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.itemId = +params['itemId'];
       this.shopItem = this.shopService.getShopItem(this.itemId);
+      this.randomItems = this.shopService.getRandomItems(this.itemId);
     });
   }
 }

@@ -216,4 +216,27 @@ export class ShopService {
   getBestsellers() {
     return this.shopItems.filter((item) => item.isBestseller);
   }
+
+  generateRandomItem() {
+    return Math.floor(Math.random() * this.shopItems.length);
+  }
+
+  getRandomItems(currentItem: number) {
+    const randomItems: ShopItem[] = [];
+    const randomNumbers: number[] = [];
+    for (let i = 0; i < 4; i++) {
+      const number = this.generateRandomItem();
+      if (!randomNumbers.includes(number) && number !== currentItem) {
+        randomNumbers.push(number);
+        randomItems.push(this.shopItems[number]);
+      } else {
+        if (randomItems.length < 4) {
+          const regeneratedNumber = this.generateRandomItem();
+          randomItems.push(this.shopItems[regeneratedNumber]);
+          console.log('siema');
+        }
+      }
+    }
+    return randomItems;
+  }
 }

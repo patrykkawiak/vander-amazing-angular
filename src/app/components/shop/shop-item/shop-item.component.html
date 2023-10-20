@@ -1,5 +1,5 @@
 <li class="shop-item">
-  <div class="shop-item-img" [routerLink]="[shopItem.id]">
+  <div class="shop-item-img" [routerLink]="[path + shopItem.id]">
     <img src="{{ shopItem.image }}" alt="{{ shopItem.name + 'image' }}" />
   </div>
   <div class="shop-item-content">

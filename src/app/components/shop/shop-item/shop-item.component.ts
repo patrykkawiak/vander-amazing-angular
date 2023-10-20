@@ -8,5 +8,5 @@ import { ShopItem } from 'src/app/core/Types/ShopItem.model';
 })
 export class ShopItemComponent {
   @Input() shopItem!: ShopItem;
-
+  @Input() path: string = '';
 }

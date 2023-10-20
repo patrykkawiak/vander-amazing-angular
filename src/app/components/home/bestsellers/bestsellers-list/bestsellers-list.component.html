@@ -15,7 +15,9 @@
     <div class="item-content">
       <p class="item-content-price">{{ bestseller.price }}zł</p>
       <p class="text-gray" style="font-size: 1.5rem">{{ bestseller.name }}</p>
-      <app-button variant="secondary">Zobacz w sklepie</app-button>
+      <app-button variant="secondary" [routerLink]="['/shop/' + bestseller.id]"
+        >Zobacz w sklepie</app-button
+      >
     </div>
   </li>
 </ul>
