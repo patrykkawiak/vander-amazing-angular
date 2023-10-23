@@ -221,20 +221,22 @@ export class ShopService {
     return Math.floor(Math.random() * this.shopItems.length);
   }
 
-  getRandomItems() {
+  getRandomItems(value: number) {
     const randomItems: ShopItem[] = [];
     const randomNumbers: number[] = [];
     for (let i = 0; i < 4; i++) {
       const number = this.generateRandomItem();
       if (!randomNumbers.includes(number)) {
-        randomNumbers.push(number);
-        randomItems.push(this.shopItems[number]);
-      } else {
-        if (randomItems.length < 4) {
+        if (number === value) {
           const regeneratedNumber = this.generateRandomItem();
           randomItems.push(this.shopItems[regeneratedNumber]);
-          console.log('siema');
+        } else {
+          randomNumbers.push(number);
+          randomItems.push(this.shopItems[number]);
         }
+      } else {
+        const regeneratedNumber = this.generateRandomItem();
+        randomItems.push(this.shopItems[regeneratedNumber]);
       }
     }
     return randomItems;

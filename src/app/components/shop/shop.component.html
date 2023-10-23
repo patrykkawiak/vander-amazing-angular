@@ -1,18 +1,23 @@
 <section class="shop wrapper">
-  <!-- <div>
-    <label for="all">Wszystko</label>
-    <input type="checkbox" id="all" [(ngModel)]="allFilter" />
-    <label for="headphones">Słuchawki</label>
-    <input type="checkbox" id="headphones" [(ngModel)]="headphonesFilter" />
-
-    <label for="all">Klawiatury</label>
-    <input type="checkbox" id="all" [(ngModel)]="keyboardsFilter" />
-    <label for="all">Myszki</label>
-    <input type="checkbox" id="all" [(ngModel)]="mouseFilter" />
-    <label for="all">Komputery</label>
-    <input type="checkbox" id="all" [(ngModel)]="pcFilter" />
-  </div> -->
-  <div class="shop-ctn" *ngIf="allFilter || headphonesFilter">
+  <div>
+    <select [(ngModel)]="categoryFilter">
+      <option value="all">All</option>
+      <option value="keyboard">Klawiatury</option>
+      <option value="pc">Komputery</option>
+      <option value="mouse">Myszki</option>
+      <option value="headphones">Słuchawki</option>
+    </select>
+    <select [(ngModel)]="sortFilter" (change)="onSelect()">
+      <option value="expensive">Od najwyższych</option>
+      <option value="cheap">Od najniższych</option>
+      <option value="a-z">Alfabetycznie(A-Z)</option>
+      <option value="z-a">Alfabetycznie(Z-A)</option>
+    </select>
+  </div>
+  <div
+    class="shop-ctn"
+    *ngIf="categoryFilter === 'headphones' || categoryFilter === 'all'"
+  >
     <h2 class="shop-heading">Słuchawki</h2>
     <ul class="shop-list">
       <ng-container *ngFor="let shopItem of shopItems">
@@ -23,7 +28,10 @@
       ></ng-container>
     </ul>
   </div>
-  <div class="shop-ctn" *ngIf="mouseFilter || allFilter">
+  <div
+    class="shop-ctn"
+    *ngIf="categoryFilter === 'mouse' || categoryFilter === 'all'"
+  >
     <h2 class="shop-heading">Myszki</h2>
     <ul class="shop-list">
       <ng-container *ngFor="let shopItem of shopItems">
@@ -34,7 +42,10 @@
       ></ng-container>
     </ul>
   </div>
-  <div class="shop-ctn" *ngIf="pcFilter || allFilter">
+  <div
+    class="shop-ctn"
+    *ngIf="categoryFilter === 'pc' || categoryFilter === 'all'"
+  >
     <h2 class="shop-heading">Komputery</h2>
     <ul class="shop-list">
       <ng-container *ngFor="let shopItem of shopItems">
@@ -45,7 +56,10 @@
       ></ng-container>
     </ul>
   </div>
-  <div class="shop-ctn" *ngIf="keyboardsFilter || allFilter">
+  <div
+    class="shop-ctn"
+    *ngIf="categoryFilter === 'keyboard' || categoryFilter === 'all'"
+  >
     <h2 class="shop-heading">Klawiatury</h2>
     <ul class="shop-list">
       <ng-container *ngFor="let shopItem of shopItems">

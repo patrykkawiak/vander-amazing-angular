@@ -22,7 +22,7 @@ export class ShopItemDetailComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.itemId = +params['itemId'];
       this.shopItem = this.shopService.getShopItem(this.itemId);
-      this.randomItems = this.shopService.getRandomItems();
+      this.randomItems = this.shopService.getRandomItems(this.itemId);
     });
   }
 
@@ -37,7 +37,6 @@ export class ShopItemDetailComponent implements OnInit {
     const finalY = (imgY - y) * -1;
 
     this.itemImg.nativeElement.style.transformOrigin = `${finalX}px ${finalY}px`;
-
-    console.log(x, y);
+    
   }
 }
