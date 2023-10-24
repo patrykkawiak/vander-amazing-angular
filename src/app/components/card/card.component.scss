@@ -34,11 +34,11 @@
   &-item {
     display: flex;
     gap: 1.5rem;
-    max-height: 8rem;
+    max-height: 10rem;
     width: 100%;
     justify-content: space-between;
     &-box {
-      width: 60%;
+      width: 65%;
       display: flex;
       gap: 1rem;
       align-items: center;
@@ -59,7 +59,7 @@
     }
 
     &-img {
-      width: 40%;
+      width: 35%;
 
       img {
         width: 100%;
