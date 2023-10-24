@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CardService } from 'src/app/core/Services/card.service';
 import { Card } from 'src/app/core/Types/Card.model';
@@ -8,7 +8,7 @@ import { Card } from 'src/app/core/Types/Card.model';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, OnDestroy {
   isNavOpen = false;
   cardPrice: number = 0;
   cardPriceSub!: Subscription;
@@ -27,5 +27,9 @@ export class NavigationComponent implements OnInit {
   }
   handleCard() {
     this.cardService.toggleCard();
+  }
+
+  ngOnDestroy(): void {
+    this.cardPriceSub.unsubscribe();
   }
 }

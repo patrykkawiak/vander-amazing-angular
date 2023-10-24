@@ -4,7 +4,7 @@
   height: calc(100vh - 4rem);
   z-index: 30;
   position: fixed;
-  width: 40rem;
+  width: 50rem;
   right: -100%;
   top: 4rem;
   background: rgb(36, 36, 36);
@@ -14,8 +14,7 @@
   &-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     margin-top: 2rem;
   }
 
@@ -36,10 +35,14 @@
     display: flex;
     gap: 1.5rem;
     max-height: 8rem;
+    width: 100%;
+    justify-content: space-between;
     &-box {
       width: 60%;
       display: flex;
       gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
 
       &-content {
         display: flex;

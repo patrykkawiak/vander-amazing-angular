@@ -28,16 +28,16 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
               </select>
-              <!-- {{ cardItem.amount !== 1 ? cardItem.amount : "" }} -->
               {{ cardItem.name }}
             </p>
             <p class="highlighted">{{ cardItem.price }}zł</p>
           </div>
+          <app-button (click)="onDelete(cardItem.id)">Usuń</app-button>
         </div>
       </div>
     </ng-container>
   </div>
-  <div *ngIf="cardItems" class="card-total">
+  <div *ngIf="cardItems.products.length > 0" class="card-total">
     <hr />
     <p>Razem: {{ totalPrice }}zł</p>
   </div>

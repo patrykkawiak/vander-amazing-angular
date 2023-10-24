@@ -39,6 +39,7 @@ export class CardComponent implements OnInit, OnDestroy {
       (card: Card) => {
         this.cardItems = card;
         this.totalPrice = +card.totalPrice.toFixed(2);
+        console.log(this.cardItems);
       }
     );
   }
@@ -50,6 +51,10 @@ export class CardComponent implements OnInit, OnDestroy {
   onSelect(e: any, id: number) {
     const value = +e.target.value;
     this.cardService.changeAmount(id, value);
+  }
+
+  onDelete(id: number) {
+    this.cardService.deleteItem(id);
   }
 
   ngOnDestroy(): void {

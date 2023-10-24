@@ -50,6 +50,17 @@ export class CardService {
     this.cardItemsSubject.next(this.cardItems);
   }
 
+  deleteItem(id: number) {
+    const index = this.cardItems.products.findIndex((item) => item.id === id);
+    this.cardItems.totalPrice =
+      this.cardItems.totalPrice -
+      this.cardItems.products[index].amount! *
+        this.cardItems.products[index].price;
+    this.cardItems.products[index].amount = 0;
+    this.cardItems.products.splice(index, 1);
+    this.cardItemsSubject.next(this.cardItems);
+  }
+
   getPrice() {
     return this.cardItems.totalPrice;
   }
