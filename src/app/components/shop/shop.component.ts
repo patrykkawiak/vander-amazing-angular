@@ -14,7 +14,6 @@ export class ShopComponent implements OnInit {
   categoryFilter: any = 'all';
   sortFilter: any = '';
 
-  sortSubscription!: Subscription;
 
   constructor(private shopService: ShopService) {}
 

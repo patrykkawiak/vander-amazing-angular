@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { CardService } from 'src/app/core/Services/card.service';
 import { Card } from 'src/app/core/Types/Card.model';
 
@@ -10,9 +10,7 @@ import { Card } from 'src/app/core/Types/Card.model';
 })
 export class NavigationComponent implements OnInit {
   isNavOpen = false;
-  cardEvent: Subject<boolean> = new Subject<boolean>();
   cardPrice: number = 0;
-
   cardPriceSub!: Subscription;
 
   constructor(private cardService: CardService) {}
@@ -24,11 +22,10 @@ export class NavigationComponent implements OnInit {
       }
     );
   }
-
   handleNav() {
     this.isNavOpen = !this.isNavOpen;
   }
   handleCard() {
-    this.cardEvent.next(true);
+    this.cardService.toggleCard();
   }
 }

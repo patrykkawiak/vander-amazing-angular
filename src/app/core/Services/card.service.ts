@@ -7,41 +7,48 @@ import { ShopService } from './shop.service';
 @Injectable({
   providedIn: 'root',
 })
-export class CardService implements OnInit {
+export class CardService {
   cardItemsSubject: Subject<Card> = new Subject<Card>();
+  cardToggleSubject: Subject<boolean> = new Subject<boolean>();
+  isCardToggle = false;
   cardItems: Card = {
     products: [],
     totalPrice: 0,
   };
 
-  constructor(private shopService: ShopService) {}
+  toggleCard() {
+    this.isCardToggle = !this.isCardToggle;
+    this.cardToggleSubject.next(this.isCardToggle);
+  }
+
+  increaseAmount(id: number) {
+    const index = this.cardItems.products.findIndex((item) => item.id === id);
+    if (this.cardItems.products[index].amount === undefined) {
+      this.cardItems.products[index].amount = 1;
+    } else {
+      this.cardItems.products[index].amount! += 1;
+    }
+  }
 
   addItemToCard(item: ShopItem) {
-    this.shopService.increaseAmount(item.id);
-    if (this.cardItems.products.includes(item)) {
-      this.cardItems.totalPrice += item.price;
-    } else {
+    if (!this.cardItems.products.includes(item)) {
       this.cardItems.products.push(item);
-      this.cardItems.totalPrice += item.price;
     }
-
+    this.cardItems.totalPrice += item.price;
+    this.increaseAmount(item.id);
     this.cardItemsSubject.next(this.cardItems);
   }
 
   changeAmount(id: number, value: number) {
     const index = this.cardItems.products.findIndex((item) => item.id === id);
-    console.log(index);
     const amontSnapshot = this.cardItems.products[index].amount;
     this.cardItems.products[index].amount = value;
     this.cardItems.totalPrice =
       this.cardItems.totalPrice -
       this.cardItems.products[index].price! * amontSnapshot! +
       this.cardItems.products[index].price! * value;
-
     this.cardItemsSubject.next(this.cardItems);
   }
-
-  ngOnInit(): void {}
 
   getPrice() {
     return this.cardItems.totalPrice;

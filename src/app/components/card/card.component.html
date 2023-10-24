@@ -1,6 +1,6 @@
 <div [ngClass]="['card', isCardOpen ? 'card-active' : '']">
   <h2>Koszyk</h2>
-  <button (click)="handleCloseCard()"><i class="bx bx-x"></i></button>
+  <button (click)="handleCard()"><i class="bx bx-x"></i></button>
   <div *ngIf="!cardItems">Koszyk jest pusty!</div>
   <div *ngIf="cardItems" class="card-box">
     <ng-container *ngFor="let cardItem of cardItems.products">

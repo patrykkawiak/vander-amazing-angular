@@ -35,7 +35,8 @@
         </li>
         <li>
           <app-button [variant]="'secondary'" (click)="handleCard()"
-            ><i class="bx bxs-shopping-bag"></i> {{ cardPrice }}zł</app-button
+            ><i class="bx bxs-shopping-bag"></i>
+            {{ cardPrice > 0 ? cardPrice + "zł" : "Pusty Koszyk" }}</app-button
           >
         </li>
       </ul>
@@ -43,4 +44,4 @@
   </div>
 </nav>
 
-<app-card [events]="cardEvent.asObservable()"></app-card>
+<app-card></app-card>

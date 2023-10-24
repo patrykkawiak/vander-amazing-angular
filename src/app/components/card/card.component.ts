@@ -17,23 +17,23 @@ import { Card } from 'src/app/core/Types/Card.model';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit, OnDestroy {
-  isCardOpen: boolean = false;
-
-  private eventSub!: Subscription;
-  @Input() events!: Observable<boolean>;
+  public isCardOpen = false;
   private cardItemsSub!: Subscription;
+  private cardToggleSub!: Subscription;
   public cardItems!: Card;
   public totalPrice: number = 0;
   public itemAmount: any;
-  constructor(private cardService: CardService, private shopService: ShopService) {}
+  constructor(
+    private cardService: CardService,
+    private shopService: ShopService
+  ) {}
 
-  handleCloseCard() {
-    this.isCardOpen = !this.isCardOpen;
-  }
   ngOnInit(): void {
-    this.eventSub = this.events.subscribe((status) => {
-      this.isCardOpen = status;
-    });
+    this.cardToggleSub = this.cardService.cardToggleSubject.subscribe(
+      (value) => {
+        this.isCardOpen = value;
+      }
+    );
 
     this.cardItemsSub = this.cardService.cardItemsSubject.subscribe(
       (card: Card) => {
@@ -43,14 +43,17 @@ export class CardComponent implements OnInit, OnDestroy {
     );
   }
 
+  handleCard() {
+    this.cardService.toggleCard();
+  }
+
   onSelect(e: any, id: number) {
-    const value = +e.target.value
-    this.cardService.changeAmount(id, value)
-    
+    const value = +e.target.value;
+    this.cardService.changeAmount(id, value);
   }
 
   ngOnDestroy(): void {
-    this.eventSub.unsubscribe();
     this.cardItemsSub.unsubscribe();
+    this.cardToggleSub.unsubscribe();
   }
 }

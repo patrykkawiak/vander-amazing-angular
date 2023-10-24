@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ShopItem } from '../Types/ShopItem.model';
-import { Subject } from 'rxjs';
-import { CardService } from './card.service';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -204,9 +201,6 @@ export class ShopService {
       isGuarantee: true,
     },
   ];
-  // shopSubject: Subject<ShopItem[]> = new Subject<ShopItem[]>();
-
-  constructor() {}
 
   getShopItems() {
     return [...this.shopItems];
@@ -223,15 +217,6 @@ export class ShopService {
   generateRandomItem() {
     return Math.floor(Math.random() * this.shopItems.length);
   }
-
-  increaseAmount(id: number) {
-    if (this.shopItems[id].amount === undefined) {
-      this.shopItems[id].amount = 1;
-    } else if (this.shopItems[id].amount! > 0) {
-      this.shopItems[id].amount! += 1;
-    }
-  }
-
 
   getRandomItems(value: number) {
     const randomItems: ShopItem[] = [];
