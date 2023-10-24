@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { CardService } from 'src/app/core/Services/card.service';
 import { ShopService } from 'src/app/core/Services/shop.service';
 import { ShopItem } from 'src/app/core/Types/ShopItem.model';
 
@@ -16,7 +17,8 @@ export class ShopItemDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private shopService: ShopService
+    private shopService: ShopService,
+    private cardService: CardService
   ) {}
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -37,6 +39,9 @@ export class ShopItemDetailComponent implements OnInit {
     const finalY = (imgY - y) * -1;
 
     this.itemImg.nativeElement.style.transformOrigin = `${finalX}px ${finalY}px`;
-    
+  }
+
+  onAddToCard(shopItem: ShopItem) {
+    this.cardService.addItemToCard(shopItem);
   }
 }

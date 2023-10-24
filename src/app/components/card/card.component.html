@@ -1,0 +1,44 @@
+<div [ngClass]="['card', isCardOpen ? 'card-active' : '']">
+  <h2>Koszyk</h2>
+  <button (click)="handleCloseCard()"><i class="bx bx-x"></i></button>
+  <div *ngIf="!cardItems">Koszyk jest pusty!</div>
+  <div *ngIf="cardItems" class="card-box">
+    <ng-container *ngFor="let cardItem of cardItems.products">
+      <div class="card-item">
+        <div class="card-item-img">
+          <img src="{{ cardItem.image }}" alt="{{ cardItem.name }}" />
+        </div>
+        <div class="card-item-box">
+          <div class="card-item-box-content">
+            <p>
+              <select
+                name=""
+                id=""
+                [value]="cardItem.amount"
+                (change)="onSelect($event, cardItem.id)"
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <!-- {{ cardItem.amount !== 1 ? cardItem.amount : "" }} -->
+              {{ cardItem.name }}
+            </p>
+            <p class="highlighted">{{ cardItem.price }}zł</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div *ngIf="cardItems" class="card-total">
+    <hr />
+    <p>Razem: {{ totalPrice }}zł</p>
+  </div>
+</div>

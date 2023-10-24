@@ -34,9 +34,13 @@
           <app-button [variant]="'primary'"> Logowanie </app-button>
         </li>
         <li>
-          <app-button [variant]="'secondary'">0.00zł</app-button>
+          <app-button [variant]="'secondary'" (click)="handleCard()"
+            ><i class="bx bxs-shopping-bag"></i> {{ cardPrice }}zł</app-button
+          >
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<app-card [events]="cardEvent.asObservable()"></app-card>

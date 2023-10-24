@@ -10,4 +10,5 @@ export interface ShopItem {
   isAvailable: boolean;
   isGuarantee: boolean;
   isBestseller?: boolean;
+  amount?: number;
 }

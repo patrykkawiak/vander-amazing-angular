@@ -1,0 +1,83 @@
+.card {
+  padding: 2.5rem;
+  overflow-y: auto;
+  height: calc(100vh - 4rem);
+  z-index: 30;
+  position: fixed;
+  width: 40rem;
+  right: -100%;
+  top: 4rem;
+  background: rgb(36, 36, 36);
+  background: linear-gradient(180deg, rgb(34, 34, 34) 0%, rgb(55, 46, 52) 100%);
+  transition: right 0.3s;
+
+  &-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  i {
+    right: 20px;
+    top: 10px;
+    position: absolute;
+    padding: 0;
+    font-size: 4rem;
+    color: white;
+  }
+
+  &-item {
+    display: flex;
+    gap: 1.5rem;
+    max-height: 8rem;
+    &-box {
+      width: 60%;
+      display: flex;
+      gap: 1rem;
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p:nth-child(1) {
+          font-size: 1.6rem;
+        }
+        p:nth-child(2) {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &-img {
+      width: 40%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+  &-total {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    p {
+      text-align: right;
+      font-size: 1.4rem;
+      padding-right: 2rem;
+      margin-top: 2rem;
+    }
+  }
+}
+.card-active {
+  right: 0;
+}
