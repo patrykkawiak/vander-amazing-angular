@@ -8,11 +8,12 @@ import { HomeModule } from './components/home/home.module';
 import { BlogModule } from './components/blog/blog.module';
 import { ErrorComponent } from './components/error/error.component';
 import { ShopModule } from './components/shop/shop.module';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, ErrorComponent],
+  declarations: [AppComponent, ErrorComponent, CheckoutComponent],
   imports: [
     BrowserModule,
     NavigationModule,

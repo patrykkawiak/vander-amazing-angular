@@ -6,6 +6,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { BlogPostComponent } from './components/blog/blog-post/blog-post.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ShopItemDetailComponent } from './components/shop/shop-item-detail/shop-item-detail.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -19,12 +20,16 @@ const routes: Routes = [
     component: BlogComponent,
   },
   { path: 'blog/:id', component: BlogPostComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'top',
+      scrollOffset: [0, 0],
+    }),
   ],
   exports: [RouterModule],
 })

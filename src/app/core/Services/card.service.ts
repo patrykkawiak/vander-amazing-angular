@@ -21,6 +21,10 @@ export class CardService {
     this.cardToggleSubject.next(this.isCardToggle);
   }
 
+  setAsCookie() {
+    document.cookie = `card=${JSON.stringify(this.cardItems)}`;
+  }
+
   increaseAmount(id: number) {
     const index = this.cardItems.products.findIndex((item) => item.id === id);
     if (this.cardItems.products[index].amount === undefined) {
@@ -36,6 +40,7 @@ export class CardService {
     }
     this.cardItems.totalPrice += item.price;
     this.increaseAmount(item.id);
+    this.setAsCookie();
     this.cardItemsSubject.next(this.cardItems);
   }
 
@@ -47,6 +52,7 @@ export class CardService {
       this.cardItems.totalPrice -
       this.cardItems.products[index].price! * amontSnapshot! +
       this.cardItems.products[index].price! * value;
+    this.setAsCookie();
     this.cardItemsSubject.next(this.cardItems);
   }
 
@@ -58,6 +64,7 @@ export class CardService {
         this.cardItems.products[index].price;
     this.cardItems.products[index].amount = 0;
     this.cardItems.products.splice(index, 1);
+    this.setAsCookie();
     this.cardItemsSubject.next(this.cardItems);
   }
 
@@ -67,5 +74,10 @@ export class CardService {
 
   getItems() {
     return this.cardItems;
+  }
+
+  setItems(items: Card) {
+    this.cardItems = items;
+    this.cardItemsSubject.next(this.cardItems);
   }
 }

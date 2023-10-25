@@ -8,10 +8,4 @@ export class Post {
     public isFeatured?: boolean
   ) {}
 
-  // get featured() {
-  //   if (!this.isFeatured) {
-  //     return;
-  //   }
-  //   return this.isFeatured;
-  // }
 }

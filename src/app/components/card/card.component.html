@@ -39,6 +39,17 @@
   </div>
   <div *ngIf="cardItems.products.length > 0" class="card-total">
     <hr />
-    <p>Razem: {{ totalPrice }}zł</p>
+    <div
+      style="
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 2rem;
+        gap: 2rem;
+      "
+    >
+      <app-button [routerLink]="['/checkout']">Kup</app-button>
+      <p>Razem: {{ totalPrice }}zł</p>
+    </div>
   </div>
 </div>

@@ -23,10 +23,7 @@ export class CardComponent implements OnInit, OnDestroy {
   public cardItems!: Card;
   public totalPrice: number = 0;
   public itemAmount: any;
-  constructor(
-    private cardService: CardService,
-    private shopService: ShopService
-  ) {}
+  constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
     this.cardToggleSub = this.cardService.cardToggleSubject.subscribe(
@@ -39,9 +36,20 @@ export class CardComponent implements OnInit, OnDestroy {
       (card: Card) => {
         this.cardItems = card;
         this.totalPrice = +card.totalPrice.toFixed(2);
-        console.log(this.cardItems);
       }
     );
+
+    const cardCookie = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('card='))
+      ?.split('=')[1];
+
+    if (cardCookie) {
+      this.cardItems = JSON.parse(cardCookie!);
+      this.cardService.setItems(this.cardItems);
+    } else {
+      return;
+    }
   }
 
   handleCard() {
