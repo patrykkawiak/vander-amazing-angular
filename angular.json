@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "vander-amazing-angular:build:production"
+              "buildTarget": "vander-amazing-angular:build:production"
             },
             "development": {
-              "browserTarget": "vander-amazing-angular:build:development"
+              "buildTarget": "vander-amazing-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "vander-amazing-angular:build"
+            "buildTarget": "vander-amazing-angular:build"
           }
         },
         "test": {
